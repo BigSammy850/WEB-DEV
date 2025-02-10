@@ -6,8 +6,7 @@ body{
         "main aside"
         "footer footer";
     grid-template-rows: auto;
-    grid-template-columns: 80% 20%;
-    height: 100vh;
+    grid-template-columns: 80% 20%;;
     margin: 0;
     padding: 0;
 }
@@ -25,8 +24,7 @@ nav{
 }
 
 main{
-    grid-area: main;
-    padding: 1em;
+    grid-area: main;;
 }
 aside{
     grid-area: aside;
