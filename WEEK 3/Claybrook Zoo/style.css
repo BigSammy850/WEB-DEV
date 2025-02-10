@@ -12,16 +12,37 @@ body{
 }
 
 header{
+    display: grid;
+    grid-template-columns: 6em auto;
+    align-items: center;
     grid-area: header;
-    background-color: #0e39fc;
+    background-color: #014e2e;
     color: white;
     padding: 1em;
 }
 
+header img{
+    width: 100%;
+    height: auto;
+}
 nav{
     grid-area: nav;
-    background-color: #f0e10c;
+    background-color: #014e2e;
 }
+
+nav ul{
+    display : flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+}
+
 
 main{
     grid-area: main;;
