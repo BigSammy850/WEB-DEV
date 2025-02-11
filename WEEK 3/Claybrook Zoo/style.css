@@ -59,16 +59,25 @@ aside{
     color: white;
     padding: 1em;
 }
-aside ul{
+/* aside ul{
     display : flex;
     /* grid-template-columns: 25% 25% 25% 25% ;
-    grid-template-rows: auto; */
+    grid-template-rows: auto; 
     justify-content: space-around;
+}*/
+aside .grid-container{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25% ;
+    grid-template-rows: auto;
+    gap: 1em;
 }
-aside img{
+aside .grid-item:nth-child(3n + 1){
+    background-color: #014e2e;
+}
+/* aside img{
     width: 100%;
-    height: auto;
-}
+    height: auto; 
+}*/
 footer{
     grid-area: footer;
     background-color: #12331f;
