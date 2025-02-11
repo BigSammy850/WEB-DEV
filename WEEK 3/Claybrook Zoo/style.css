@@ -45,10 +45,7 @@ nav ul li a{
 
 
 main{
-    grid-area: main;
-    background-image: url(banner4.jpeg);
-    background-size: cover;
-    color: white;
+    grid-area: main;;
 }
 aside{
     grid-area: aside;
