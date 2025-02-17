@@ -62,13 +62,13 @@ aside{
 aside ul{
     display : flex;
     /* grid-template-columns: 25% 25% 25% 25% ;
-    grid-template-rows: auto; */
-    justify-content: space-around;
+    grid-template-rows: auto; 
+    justify-content: space-around; */
 }
 aside img{
     width: 100%;
     height: auto;
-}
+} 
 footer{
     grid-area: footer;
     background-color: #12331f;
