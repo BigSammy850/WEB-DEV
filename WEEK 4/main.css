@@ -32,17 +32,7 @@ main{
     box-shadow: 5px 5px 5px #000;
     grid-area: main;
 }
-nav ul li a{
-    color: #ABDAE1;
-    text-decoration: none;
-    padding: 19px;
-    border-top: 4em;
-    /* padding-bottom: 20px; */
-    list-style-type: none;
-    display: inline-block;
-    list-style: none;
-    grid-area: nav;
-}
+
 
 aside{
     grid-area: aside;
