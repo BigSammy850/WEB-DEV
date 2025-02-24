@@ -63,9 +63,9 @@ nav ul ul {
     background-color: #A3B9C9;
     width: 100%;
     padding: 0;
-    transform: translate(0, -100%);
-    z-index: -1;
-    transition: transform 0.5s ease-in;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    pointer-events: none;
 }
 
 nav > ul > li{
@@ -74,6 +74,6 @@ nav > ul > li{
 }
 
 nav > ul> li:hover ul{
-    transform: translate(0, 0);
-    z-index: 1;
+    opacity: 1;
+    pointer-events: auto;
 }
