@@ -8,7 +8,7 @@ header{
     color: rgb(171, 218, 225);
     text-shadow: 1px 1px 31px rgba(171,218,225,0.68);
     font-size: 2.5em;
-    text-align: center;
+    
     /*background-color: #A3B9C9;*/
     display:  inline-block;
     padding: 10px;
@@ -16,11 +16,6 @@ header{
     width: auto;
     grid-area: header;
 }
-.navigatiionLinks{
-    list-style: none;
-
-}
-
 
 p{
     font-size: 1.5em;
@@ -36,7 +31,6 @@ main{
     /* border-left: 6em; */
     box-shadow: 5px 5px 5px #000;
     grid-area: main;
-    align-self: center;
 }
 nav ul li a{
     color: #ABDAE1;
@@ -49,12 +43,7 @@ nav ul li a{
     list-style: none;
     grid-area: nav;
 }
-nav ul{
-    display: flex;
-    justify-content: space-around;
-    border: 4em;
 
-}
 aside{
     grid-area: aside;
     padding-left: 3em;
