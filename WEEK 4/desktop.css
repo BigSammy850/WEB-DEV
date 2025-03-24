@@ -77,3 +77,7 @@ nav > ul> li:hover ul{
     opacity: 1;
     pointer-events: auto;
 }
+
+header a {
+    display: none;
+}

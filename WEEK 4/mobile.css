@@ -39,4 +39,26 @@ nav {
     left: 50%;
     width: 50%;
     height: 100vh;
+    transform: translate(100vw, 0);
+    transition: 0.5s;
+}
+
+#clicked:target nav {
+    transform: translate(0, 0);
+}
+
+#clicked .showNav {
+    display: block;
+}
+
+#clicked .closeNav {
+    display: none;
+}
+
+#clicked:target .showNav {
+    display: none;
+}
+
+#clicked:target .closeNav {
+    display: block;
 }
