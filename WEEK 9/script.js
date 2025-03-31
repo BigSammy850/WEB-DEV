@@ -1,51 +1,111 @@
+let leftPressed = false;
+let rightPressed = false;
+let upPressed = false;
+let downPressed = false;
 const circle = document.querySelector('#circle');
-const position = circle.getBoundingClientRect();
-let positionRight = position.right;
-let positionLeft = position.left;
-console.log(positionRight);
-console.log(positionLeft);
-function circleMove(event) {
+
+
+function keyDown(event) {
     console.log(event.key);
-    if (event.key == 'ArrowLeft') {
+    switch (event.key) {
+        case 'ArrowLeft':
+            leftPressed = true;
+        break;
+        case 'ArrowRight':
+            rightPressed = true;
+            break;
+        case 'ArrowUp':
+            upPressed = true;
+            break;
+        case 'ArrowDown':
+            downPressed = true;
+            break;
+        default:
+            alert('Please use the arrow keys');
+    }
+}
+
+
+function keyUp(event) {
+    switch (event.key) {
+        case 'ArrowLeft':
+            leftPressed = false;
+            break;
+        case 'ArrowRight':
+            rightPressed = false;
+            break;
+        case 'ArrowUp':
+            upPressed = false;
+            break;
+        case 'ArrowDown':
+            downPressed = false;
+            break;
+    }
+}
+
+
+function move(){
+    console.log(move);
+    if(leftPressed==true){
         moveLeft();
     }
-    if (event.key == 'ArrowRight') {
+    if(rightPressed==true){
         moveRight();
     }
-    if (event.key == 'ArrowUp') {
+    if(upPressed==true){
         moveTop();
     }
-    if (event.key == 'ArrowDown') {
+    if(downPressed==true){
         moveBottom();
     }
 }
+
+
 function moveLeft() {
     const position = circle.getBoundingClientRect();
     let positionLeft = position.left;
+    if(positionLeft>0){
     circle.style.left = positionLeft - 10 + 'px';
-    console.log(positionLeft);
+    }
 }
+
+
 function moveRight() {
     const position = circle.getBoundingClientRect();
+    let positionLeft = position.left;
     let positionRight = position.right;
-    circle.style.left = positionRight + 10 + 'px';
-    console.log(positionRight);
+    if(positionRight<window.innerWidth){
+    circle.style.left = positionLeft + 10 + 'px';
+    }
+    else{
+        console.log('Hit the edge');
+    }
 }
+
+
 function moveTop() {
     const position = circle.getBoundingClientRect();
     let positionTop = position.top;
+    if(positionTop>0){
     circle.style.top = positionTop - 10 + 'px';
+    }
 }
+
+
 function moveBottom() {
     const position = circle.getBoundingClientRect();
+    let positionTop = position.top;
     let positionBottom = position.bottom;
-    circle.style.top = positionBottom + 1 + 'px';
+    if(positionBottom<window.innerHeight){
+    circle.style.top = positionTop + 10 + 'px';
+    }
+    else{
+        console.log('Hit the edge');
+        
+    }
 }
-document.addEventListener('keydown', circleMove);
 
-// function circleClick(){
-//     alert('The circle was pressed');
-//     circle.style.marginLeft = '10px';
-// }
 
-// circle.addEventListener('click', circleClick);
+document.addEventListener('keyup', keyUp);
+document.addEventListener('keydown', keyDown);
+timer = setInterval(move, 10);
