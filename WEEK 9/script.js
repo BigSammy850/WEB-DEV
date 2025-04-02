@@ -4,6 +4,8 @@ let upPressed = false;
 let downPressed = false;
 const circle = document.querySelector('#circle');
 
+console.log(eve)
+
 
 function keyDown(event) {
     console.log(event.key);
