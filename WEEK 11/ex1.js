@@ -1,4 +1,5 @@
 let dice = document.querySelectorAll(".side1");
+let paragraph= document.querySelectorAll("p");  
 
 for (i = 0; i < dice.length; i++) {
     //let text = dice[i].nextElementSibling;
@@ -8,6 +9,14 @@ for (i = 0; i < dice.length; i++) {
         this.classList = 'side' + random;
         this.nextElementSibling.innerHTML = "You rolled a " + random;
         //text.innerHTML = "You rolled a " + random;
+    });
+}
+
+for (change of paragraph){
+    change.addEventListener("click", function () {
+        let random = Math.ceil(Math.random() * 6);
+        this.innerHTML = "You rolled a " + random;
+        this.previousElementSibling.classList= "side" + random;
     });
 }
 
