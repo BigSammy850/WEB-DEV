@@ -26,47 +26,40 @@ function move(enemy) {
     let up = parseInt(enemy.style.top) || 0;
     let left = parseInt(enemy.style.left) || 0;
 
-    let direction = Math.floor(Math.random() * 4)+1;
-
-    let verticalDirection = 0; // Default to no vertical movement
-    let horizontalDirection = 0; // Default to no horizontal movement
-
-
-    switch (direction) {
-        case 1:
-            verticalDirection = -1; // Move up
-            break;
-        case 2:
-            verticalDirection = 1; // Move down
-            break;
-        case 3:
-            horizontalDirection = -1; // Move left
-            break;
-        case 4:
-            horizontalDirection = 1; // Move right
-            break;
-    }
+    // Randomly choose an initial direction (0 = up, 1 = down, 2 = left, 3 = right)
+    let direction = Math.floor(Math.random() * 4);
 
     // Move the circle in the current direction
     setInterval(function () {
-        // Update vertical position
-        up += verticalDirection * 2; // Move by 2 pixels per interval
-        if (up < 0) {
-            up = 0;
-            verticalDirection = 1; // Reverse direction to down
-        } else if (up > window.innerHeight - enemy.offsetHeight) {
-            up = window.innerHeight - enemy.offsetHeight;
-            verticalDirection = -1; // Reverse direction to up
-        }
-
-        // Update horizontal position
-        left += horizontalDirection * 2; // Move by 2 pixels per interval
-        if (left < 0) {
-            left = 0;
-            horizontalDirection = 1; // Reverse direction to right
-        } else if (left > window.innerWidth - enemy.offsetWidth) {
-            left = window.innerWidth - enemy.offsetWidth;
-            horizontalDirection = -1; // Reverse direction to left
+        switch (direction) {
+            case 0: // Move up
+                up -= 2; // Move by 2 pixels per interval
+                if (up < 0) {
+                    up = 0; // Prevent moving out of bounds
+                    direction = Math.floor(Math.random() * 4); // Choose a new random direction
+                }
+                break;
+            case 1: // Move down
+                up += 2;
+                if (up > window.innerHeight - enemy.offsetHeight) {
+                    up = window.innerHeight - enemy.offsetHeight; // Prevent moving out of bounds
+                    direction = Math.floor(Math.random() * 4); // Choose a new random direction
+                }
+                break;
+            case 2: // Move left
+                left -= 2;
+                if (left < 0) {
+                    left = 0; // Prevent moving out of bounds
+                    direction = Math.floor(Math.random() * 4); // Choose a new random direction
+                }
+                break;
+            case 3: // Move right
+                left += 2;
+                if (left > window.innerWidth - enemy.offsetWidth) {
+                    left = window.innerWidth - enemy.offsetWidth; // Prevent moving out of bounds
+                    direction = Math.floor(Math.random() * 4); // Choose a new random direction
+                }
+                break;
         }
 
         // Apply the updated position to the circle
@@ -74,3 +67,4 @@ function move(enemy) {
         enemy.style.left = left + 'px';
     }, 10); // Move every 10 milliseconds
 }
+
