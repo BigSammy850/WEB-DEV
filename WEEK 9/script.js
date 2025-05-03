@@ -4,7 +4,7 @@ let upPressed = false;
 let downPressed = false;
 const circle = document.querySelector('#circle');
 
-console.log(eve)
+//console.log(eve)
 
 
 function keyDown(event) {
@@ -47,7 +47,7 @@ function keyUp(event) {
 
 
 function move(){
-    console.log(move);
+    //console.log(move);
     if(leftPressed==true){
         moveLeft();
     }
